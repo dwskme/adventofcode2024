@@ -8,6 +8,7 @@ import (
 	"strings"
 )
 
+func abs(x int) int {
 func main() {
 	var left, right []int
 	sum := 0
