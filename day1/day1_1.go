@@ -1,7 +1,6 @@
-package main
+package Day1
 
 import (
-	"fmt"
 	"os"
 	"sort"
 	"strconv"
@@ -9,11 +8,17 @@ import (
 )
 
 func abs(x int) int {
-func main() {
-	var left, right []int
-	sum := 0
+	if x < 0 {
+		return -x
+	}
+	return x
+}
 
-	data, _ := os.ReadFile("input.txt")
+func Day1_1() int {
+	var left, right []int
+	Sum := 0
+
+	data, _ := os.ReadFile("day1/input.txt")
 	lines := strings.Split(string(data), "\n")
 
 	for _, line := range lines {
@@ -30,15 +35,7 @@ func main() {
 	sort.Ints(right)
 
 	for i := range left {
-		sum += abs(left[i] - right[i])
+		Sum += abs(left[i] - right[i])
 	}
-
-	fmt.Println(sum)
-}
-
-func abs(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
+	return Sum
 }
